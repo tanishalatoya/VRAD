@@ -25,17 +25,17 @@ export default class UserLogin extends Component {
           type='text'
           placeholder='name'
           value={this.state.name}
-          name='title'
+          name='name'
           onChange={this.handleChange}
         />
         <input
           type='text'
           placeholder='email'
           value={this.state.email}
-          name='description'
+          name='eamil'
           onChange={this.handleChange}
         />
-        <label htmlFor="login-reason">Reason for visit</label>
+        <label htmlFor="reason-for-login">Reason for visit</label>
         <select onChange={this.handleChange} name='reason'>
           <option disabled selected value>
           -- select an option --
