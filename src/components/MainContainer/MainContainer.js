@@ -14,9 +14,9 @@ componentDidMount() {
   //fetch goes here...
 }
 
-  return (
-    <Areas areas={this.state.areas}/>
-  )
+  render() {
+    <AreasContainer areas={this.state.areas}/>
+  }
 };
 
 export default MainContainer;
