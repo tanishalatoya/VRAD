@@ -37,7 +37,7 @@ export default class UserLogin extends Component {
           type='text'
           placeholder='email'
           value={this.state.email}
-          name='eamil'
+          name='email'
           onChange={this.handleChange}
         />
       </div>
