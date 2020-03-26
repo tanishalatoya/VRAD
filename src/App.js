@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UserLogin from '../src/components/Login/login.js';
-import { Switch, Route } from 'react-router-dom';
+import AreasContainer from '../src/components/AreasContainer/AreasContainer.js';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { Component } from 'react';
 
 
@@ -24,8 +25,13 @@ export default class App extends Component {
   render() {
     return (
       <main>
-       <Route path='/' component={UserLogin}/>
+       <Switch>
+         <Route path="/areas" render={ () => <AreasContainer/>}/>
+         <Route path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
+       </Switch>
       </main>
     )
   }
 }
+
+// <Route path='/' component={UserLogin}/>
