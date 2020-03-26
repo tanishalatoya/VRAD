@@ -2,12 +2,12 @@ import React from 'react';
 import { UserLogin } from 'components/Login/login.js';
 
 
-export const UserInfo = (props) => {
+export const UserInfo = ({ name , email, reason }) => {
   return (
     <article className ='user-info-article'>
-      <h1 className='heading'>Welcome to V-RAD {props.name}</h1>
-      <p>User Email: {props.email}</p>
-      <p>Reason for travel: {props.reason}</p>
+      <h1 className='heading'>Welcome to V-RAD {name}</h1>
+      <p>User Email: {email}</p>
+      <p>Reason for travel: {reason}</p>
       <button>View Favorites</button>
       <button>Logout</button>
     </article>
