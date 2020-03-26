@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import AreasContainer from '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/AreasContainer/AreasContainer.js';
 import { Link } from 'react-router-dom';
+import '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/Login/login.css'
+
 
 
 export default class UserLogin extends Component {
@@ -8,7 +11,9 @@ export default class UserLogin extends Component {
     this.state = {
       name: '',
       email: '',
-      reason: ''
+      reason: '',
+      error: '',
+      areasC: ''
     };
   }
 
@@ -16,9 +21,14 @@ export default class UserLogin extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  loginUser = () => {
-    const { setUserInfo } = this.props;
-    setUserInfo(this.state);
+  loginUser = event => {
+    event.preventDefault()
+    if (this.state.name === '' || this.state.email === ''|| this.state.reason === '') {
+      this.setState({error: 'Please Fill In All Inputs'})
+    } else {
+      const { setUserInfo } = this.props;
+      this.props.setUserInfo(this.state);
+    }
   }
 
   render() {
@@ -53,8 +63,15 @@ export default class UserLogin extends Component {
           <option value="other">Other</option>
         </select>
         <div>
-          <button onClick={this.loginUser} className="login-button" to="/areas">Login</button>
+          <Link onClick={() => this.loginUser} className="login-button" to="/areas">
+            Login
+          </Link>
         </div>
+      {this.state.error &&
+        <div>
+          <p>{this.state.error}</p>
+        </div>
+      }
       </form>
     );
   }
