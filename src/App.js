@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import UserLogin from '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/Login/login.js';
+import UserLogin from '../src/components/Login/login.js';
 import { Switch, Route } from 'react-router-dom';
 import { Component } from 'react';
 
