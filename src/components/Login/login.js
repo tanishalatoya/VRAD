@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AreasContainer from '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/AreasContainer/AreasContainer.js';
 import { Link } from 'react-router-dom';
 import '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/Login/login.css'
 
