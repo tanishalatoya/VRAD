@@ -1,14 +1,11 @@
-import React from 'react';
+import React from 'react'
+import Areas from '../../components/Areas/Areas.js'
+import PropTypes from 'prop-types';
 import './AreasContainer.css';
 
 const AreasContainer = (props) => {
   const allAreas = props.listingsByArea.map(area => {
-    // console.log(area[0].areaNickname);
-    // console.log(area[0].areaDetails.name);
-    // console.log(area[0].areaDetails.location);
-    // console.log(area[0].areaDetails.about);
-    // console.log(area[0].areaDetails.id);
-    return <Area
+    return <Areas
       key={area[0].areaDetails.id}
       areaNickname={area[0].areaNickname}
       name={area[0].areaDetails.name}
@@ -25,3 +22,11 @@ const AreasContainer = (props) => {
 }
 
 export default AreasContainer;
+
+AreasContainer.propTypes = {
+  key: PropTypes.number,
+  areaNickname: PropTypes.string,
+  name: PropTypes.string,
+  location: PropTypes.string,
+  about: PropTypes.string
+};
