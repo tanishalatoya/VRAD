@@ -62,7 +62,7 @@ export default class UserLogin extends Component {
           <option value="other">Other</option>
         </select>
         <div>
-          <Link onClick={() => this.loginUser} className="login-button" to="/areas">
+          <Link onClick={() => this.loginUser} className="login-button" to="/areas /listings">
             Login
           </Link>
         </div>
