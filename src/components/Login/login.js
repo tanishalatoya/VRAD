@@ -11,8 +11,7 @@ export default class UserLogin extends Component {
       name: '',
       email: '',
       reason: '',
-      error: '',
-      areasC: ''
+      error: ''
     };
   }
 
@@ -20,11 +19,12 @@ export default class UserLogin extends Component {
     this.setState({[e.target.name]: e.target.value})
   }
 
-  loginUser = event => {
-    event.preventDefault()
+  loginUser = (e) => {
     if (this.state.name === '' || this.state.email === ''|| this.state.reason === '') {
+      e.preventDefault();
       this.setState({error: 'Please Fill In All Inputs'})
     } else {
+
       const { setUserInfo } = this.props;
       this.props.setUserInfo(this.state);
     }
@@ -47,13 +47,13 @@ export default class UserLogin extends Component {
           placeholder='email'
           value={this.state.email}
           name='email'
-          onChange={this.handleChange}
+          onChange={e => this.handleChange(e)}
         />
       </div>
       <div>
         <label htmlFor="reason-for-login">Reason for visit</label>
       </div>
-        <select onChange={this.handleChange} name='reason'>
+        <select onChange={e => this.handleChange(e)} name='reason'>
           <option disabled selected value>
           -- select an option --
           </option>
@@ -62,8 +62,8 @@ export default class UserLogin extends Component {
           <option value="other">Other</option>
         </select>
         <div>
-          <Link onClick={() => this.loginUser} className="login-button" to="/areas">
-            Login
+          <Link to="/areas">
+            <button type='button' onClick={e => this.loginUser(e)} className="login-button">Login</button>
           </Link>
         </div>
       {this.state.error &&
