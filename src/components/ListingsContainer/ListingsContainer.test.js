@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
 const ListingsContainer = (props) => {
-  const allListings = props.listingsByArea.listingDetails.map(listing => {
-    console.log(listings)
+  const allListings = props.listingsByArea..map(listing => {
+    console.log(listing)
     return <ListingsCard
       key={listing[0].listingDetails.neighborhood_id}
       name={listing[0].listingName}
