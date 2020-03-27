@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import UserLogin from '../src/components/Login/login.js';
 import AreasContainer from '../src/components/AreasContainer/AreasContainer.js';
-import ListingsContainer from '../src/components/ListingsContainer/ListingsContainer';
+import { ListingsContainer } from '../src/components/ListingsContainer/ListingsContainer';
 import { Switch, Route } from 'react-router-dom';
 import { Component } from 'react';
 
