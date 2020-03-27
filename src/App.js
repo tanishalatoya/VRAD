@@ -63,7 +63,7 @@ export default class App extends Component {
     return (
       <main>
        <Switch>
-        <Route path='/listings' render={ () => <ListingsContainer />}/>
+        <Route path='/listings' render={ () => <ListingsContainer listingsByArea={this.state./listingsByArea.listings}/>}/>
         <Route path="/areas" render={ () => <AreasContainer listingsByArea={this.state.listingsByArea} />}/>
         <Route path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>
