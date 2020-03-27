@@ -1,5 +1,5 @@
 import React from 'react'
-import Areas from '../../components/ListingsCard/ListingsCard.js'
+import ListingsCard from '../../components/ListingsCard/ListingsCard.js'
 import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
@@ -9,7 +9,6 @@ const ListingsContainer = (props) => {
     return <ListingsCard
       key={listing[0].listingDetails.neighborhood_id}
       name={listing[0].listingName}
-      areaNickname={listing[0].areaNickname}
     />
   })
 
@@ -25,5 +24,6 @@ const ListingsContainer = (props) => {
 export default ListingsContainer;
 
 ListingsContainer.propTypes = {
-
+  key: PropTypes.number,
+  name: PropTypes.listingName,
 };
