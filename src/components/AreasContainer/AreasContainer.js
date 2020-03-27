@@ -15,8 +15,10 @@ const AreasContainer = (props) => {
   })
 
   return (
-    <section>
+    <section className='areas-container'>
+      <section className='card-container'>
       { allAreas }
+      </section>
     </section>
   )
 }
