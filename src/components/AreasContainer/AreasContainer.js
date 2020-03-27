@@ -1,22 +1,34 @@
-import React from 'react';
+import React from 'react'
+import Areas from '../../components/Areas/Areas.js'
+import PropTypes from 'prop-types';
 import './AreasContainer.css';
 
-const AreasContainer = () => {
-  // const allAreas = props.map(area => {
-  //   return <Area
-  //     name={area.area}
-  //     location={area.location}
-  //     about={area.about}
-  //     listings-{area.listings}
-  //     key={area.id}
-  //   />
-  // })
+const AreasContainer = (props) => {
+  const allAreas = props.listingsByArea.map(area => {
+    return <Areas
+      key={area[0].areaDetails.id}
+      areaNickname={area[0].areaNickname}
+      name={area[0].areaDetails.name}
+      location={area[0].areaDetails.location}
+      about={area[0].areaDetails.about}
+    />
+  })
 
   return (
-    <section>
-      <h1>made it</h1>
+    <section className='areas-container'>
+      <section className='card-container'>
+      { allAreas }
+      </section>
     </section>
   )
 }
 
 export default AreasContainer;
+
+AreasContainer.propTypes = {
+  key: PropTypes.number,
+  areaNickname: PropTypes.string,
+  name: PropTypes.string,
+  location: PropTypes.string,
+  about: PropTypes.string
+};

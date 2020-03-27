@@ -1,1 +1,16 @@
 /* STYLING FOR AREAS CONTAINER */
+.areas-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100vh;
+  grid-template-areas:
+  "user-profile card-container"
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: card-container;
+  justify-content: space-around;
+  padding-top: 5%;
+}
