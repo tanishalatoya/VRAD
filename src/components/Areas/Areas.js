@@ -4,7 +4,7 @@ import './Areas.css';
 
 const Areas = (props) => {
   return (
-    <section>
+    <section className='area-card'>
       <h3>&ldquo;{props.areaNickname}&rdquo;</h3>
       <h4>{props.name}</h4>
       <p>{props.location}</p>
