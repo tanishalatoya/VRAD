@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import UserLogin from '../src/components/Login/login.js';
 import AreasContainer from '../src/components/AreasContainer/AreasContainer.js';
+import { ListingsContainer } from '../src/components/ListingsContainer/ListingsContainer';
 import { Switch, Route } from 'react-router-dom';
 import { Component } from 'react';
 
@@ -41,9 +42,12 @@ export default class App extends Component {
                       //You can see the data in your console.log upon running the reactApp.
                       //This is hella long but we/should refactor.
                       listingName: listingInfo.name,
+                      listingAddress1: listingInfo.address.street,
+                      listingAddress2: listingInfo.address.zip,
+                      listingId: listingInfo.listing_id,
                       listingDetails: listingInfo.details,
                       areaNickname: area.area,
-                      areaDetails: {...details}
+                      areaDetails: {...details},
                     }
                 })
               })
@@ -62,6 +66,8 @@ export default class App extends Component {
     return (
       <main>
        <Switch>
+
+        <Route path='/listings' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}/>}/>
         <Route path="/areas" render={ () => <AreasContainer
           listingsByArea={this.state.listingsByArea}
           user={this.state.user} />}/>
