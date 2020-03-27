@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
 const ListingsContainer = (props) => {
-  const allListings = props.listingsByArea..map(listing => {
+  const allListings = props.listingsByArea.listings.map(listing => {
     console.log(listing)
     return <ListingsCard
-      key={listing[0].listingDetails.neighborhood_id}
-      name={listing[0].listingName}
+      key={listing[0].listing_id}
+      name={listing[0].name}
+      address{listing[0].address.street}
+      zip{listing[0].address.zip}
     />
   })
 
@@ -25,5 +27,7 @@ export default ListingsContainer;
 
 ListingsContainer.propTypes = {
   key: PropTypes.number,
-  name: PropTypes.listingName,
+  name: PropTypes.string,
+  address: PropTypes.string,
+  zip: PropTypes.string
 };
