@@ -6,10 +6,13 @@ import PropTypes from 'prop-types';
 const ListingsCard = (props) => {
   return (
     <section className='listings-card'>
-      <h2>&ldquo;{props.name}&rdquo;</h2>
-      <p>Street: {props.address}</p>
-      <p>Zip Code: {props.zip}</p>
-      <button id={props.listing_id}>View Listing Details</button>
+      <h2>&ldquo;{props.listingName}&rdquo;</h2>
+      <p>Street: {props.listingAddress1}</p>
+      <p>Zip Code: {props.listingAddress2}</p>
+      <div>
+      <button>Favorotive</button>
+      <button id={props.listingId}>View Listing Details</button>
+      </div>
     </section>
   )
 }
