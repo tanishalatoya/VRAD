@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
 const ListingsContainer = (props) => {
-  const allListings = props.listingsByArea.listings.map(listing => {
+  const allListings = props.listingsByArea.listingDetails.map(listing => {
     console.log(listing)
     return <ListingsCard
       key={listing[0].listing_id}
