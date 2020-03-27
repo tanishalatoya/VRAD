@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import UserLogin from '../src/components/Login/login.js';
 import AreasContainer from '../src/components/AreasContainer/AreasContainer.js';
-import ListingsContainer from '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/ListingsContainer/ListingsContainers.js';
+import ListingsContainer from '../src/components/ListingsContainer/ListingsContainer.js';
 import { Switch, Route } from 'react-router-dom';
 import { Component } from 'react';
 
@@ -63,7 +63,7 @@ export default class App extends Component {
     return (
       <main>
        <Switch>
-        <Route path='/listings' render={ () => <ListingsContainer listingsByArea={this.state./listingsByArea.listings}/>}/>
+        <Route path='/listings' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea.listings}/>}/>
         <Route path="/areas" render={ () => <AreasContainer listingsByArea={this.state.listingsByArea} />}/>
         <Route path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>
