@@ -1,28 +1,29 @@
 import React from 'react'
-import ListingsCard from '../ListingCard/ListingCard.test';
+import { ListingCard } from '../ListingCard/ListingCard.js';
 import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
-const ListingsContainer = (props) => {
-  const allListings = props.listingsByArea.map(listing => {
+export const ListingsContainer = (props) => {
+console.log(props.listingsByArea)
+let area = props.listingsByArea[0];
 
-    // return <ListingsCard
-    //   listingName= {listing.listingName}
-    //   listingAddress1= {listing.listingAddress1}
-    //   listingAddress2= {listing.listingAddress2}
-    //   key= {listing.listingId}
-    // />
+const allListings = area.map(listing => {
+    return <ListingCard
+      listingName= {listing.listingName}
+      listingAddress1= {listing.listingAddress1}
+      listingAddress2= {listing.listingAddress2}
+      key= {listing.listingId}
+    />
   })
 
   return (
-    <section className='listings-container'>
-      <section className='Listings-card-container'>
-      </section>
+    <section>
+      {allListings}
     </section>
   )
 }
 
-export default ListingsContainer;
+// export default ListingsContainer;
 
 ListingsContainer.propTypes = {
   key: PropTypes.number,
