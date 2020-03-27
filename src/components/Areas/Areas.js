@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Areas.css';
 
 const Areas = (props) => {
@@ -13,5 +14,12 @@ const Areas = (props) => {
   )
 }
 
-
 export default Areas;
+
+Areas.propTypes = {
+  key: PropTypes.number,
+  areaNickname: PropTypes.string,
+  name: PropTypes.string,
+  location: PropTypes.string,
+  about: PropTypes.string
+};
