@@ -1,5 +1,6 @@
 import React from 'react'
 import Areas from '../../components/Areas/Areas.js'
+import UserProfile from '../../components/UserProfile/UserProfile.js'
 import PropTypes from 'prop-types';
 import './AreasContainer.css';
 
@@ -16,6 +17,7 @@ const AreasContainer = (props) => {
 
   return (
     <section className='areas-container'>
+      <UserProfile />
       <section className='card-container'>
       { allAreas }
       </section>
