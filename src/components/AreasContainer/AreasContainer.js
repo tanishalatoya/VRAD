@@ -17,7 +17,7 @@ const AreasContainer = (props) => {
 
   return (
     <section className='areas-container'>
-      <UserProfile />
+      <UserProfile user={props.user}/>
       <section className='card-container'>
       { allAreas }
       </section>
