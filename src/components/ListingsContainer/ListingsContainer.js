@@ -27,9 +27,11 @@ export const ListingsContainer = (props) => {
   })
 
   return (
-    <section>
+    <section className='listings-container'>
       <UserProfile user={props.user}/>
+      <section className='listing-cards-container'>
       { allListings }
+      </section>
     </section>
   )
 }
