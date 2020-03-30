@@ -12,7 +12,7 @@ export const ListingsContainer = (props) => {
   ]
 
   const selectedAreaListings = combinedListings.filter(listing => {
-    return listing.areaDetails.id === 240
+    return listing.areaDetails.id === parseInt(props.selectedAreaId)
   })
 
   const allListings = selectedAreaListings.map(listing => {
