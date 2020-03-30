@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './Areas.css';
 
 const Areas = (props) => {
@@ -9,7 +10,9 @@ const Areas = (props) => {
       <h4>{props.name}</h4>
       <p>{props.location}</p>
       <p>{props.about}</p>
+      <Link to='/listings'>
       <button>View Listings</button>
+      </Link>
     </section>
   )
 }
