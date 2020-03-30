@@ -21,6 +21,7 @@ export const ListingsContainer = (props) => {
       listingName= {listing.listingName}
       listingAddress1= {listing.listingAddress1}
       listingAddress2= {listing.listingAddress2}
+      id= {listing.listingId}
       key= {listing.listingId}
     />
   })
