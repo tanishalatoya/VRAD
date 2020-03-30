@@ -1,5 +1,6 @@
 import React from 'react'
 import { ListingCard } from '../ListingCard/ListingCard.js';
+import UserProfile from '../../components/UserProfile/UserProfile.js'
 import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
@@ -26,6 +27,7 @@ export const ListingsContainer = (props) => {
 
   return (
     <section>
+      <UserProfile user={props.user}/>
       { allListings }
     </section>
   )

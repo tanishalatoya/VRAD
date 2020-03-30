@@ -76,10 +76,12 @@ export default class App extends Component {
 
         <Route path='/areas/:id' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}
         selectedAreaId={this.state.selectedAreaId}
+        user={this.state.user}
         />}/>
         <Route path="/areas" render={ ({ match }) => <AreasContainer
           listingsByArea={this.state.listingsByArea}
           updateSelectedArea={this.updateSelectedArea}
+          selectedAreaId={this.state.selectedAreaId}
           user={this.state.user}
           match={match} />}/>
         <Route path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>

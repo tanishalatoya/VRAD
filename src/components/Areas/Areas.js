@@ -7,14 +7,15 @@ export default class Areas extends Component {
   constructor() {
     super();
     this.state = {
-      areaId: null
+      areaId: null,
     }
   }
 
   selectAreaListing = e => {
-    e.preventDefault();
-    this.setState({ areaId: e.target.id})
-    this.props.updateSelectedArea(this.state.areaId)
+    this.props.updateSelectedArea(e.target.id)
+    this.setState({ areaId: e.target.id }, () => {
+      return this.state.areaId;
+    })
   }
 
   render() {
@@ -24,8 +25,12 @@ export default class Areas extends Component {
         <h4>{this.props.name}</h4>
         <p>{this.props.location}</p>
         <p>{this.props.about}</p>
-        <Link to='/listings'>
-        <button id={this.props.id} onClick={e => this.selectAreaListing(e)}>View Listings</button>
+        <Link to={`areas/${this.props.selectedAreaId}`}>
+          <button
+            id={this.props.id}
+            type='button'
+            onClick={this.selectAreaListing}>View Listings
+          </button>
         </Link>
       </section>
     )
