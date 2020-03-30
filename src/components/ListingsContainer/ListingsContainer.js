@@ -4,10 +4,18 @@ import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
 export const ListingsContainer = (props) => {
-console.log(props.listingsByArea)
-let area = props.listingsByArea[0];
+  const combinedListings = [
+    ...props.listingsByArea[0],
+    ...props.listingsByArea[1],
+    ...props.listingsByArea[2],
+    ...props.listingsByArea[3],
+  ]
 
-const allListings = area.map(listing => {
+  const selectedAreaListings = combinedListings.filter(listing => {
+    return listing.areaDetails.id === 240
+  })
+
+  const allListings = selectedAreaListings.map(listing => {
     return <ListingCard
       listingName= {listing.listingName}
       listingAddress1= {listing.listingAddress1}
@@ -18,12 +26,11 @@ const allListings = area.map(listing => {
 
   return (
     <section>
-      {allListings}
+      { allListings }
     </section>
   )
 }
 
-// export default ListingsContainer;
 
 ListingsContainer.propTypes = {
   key: PropTypes.number,
