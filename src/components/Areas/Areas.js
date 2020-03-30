@@ -11,7 +11,7 @@ const Areas = (props) => {
       <p>{props.location}</p>
       <p>{props.about}</p>
       <Link to='/listings'>
-      <button>View Listings</button>
+      <button id={props.areaDetails.id}>View Listings</button>
       </Link>
     </section>
   )
