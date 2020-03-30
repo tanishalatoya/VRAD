@@ -1,0 +1,16 @@
+/* STYLING FOR LISTINGS CONTAINER */
+.listings-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "user-profile listing-cards-container";
+    min-height: 100vh;
+}
+
+.listing-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: listing-cards-container;
+  padding-top: 5%;
+}
