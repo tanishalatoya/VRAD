@@ -11,6 +11,11 @@ export default class Areas extends Component {
     }
   }
 
+  selectAreaListing = e => {
+    e.preventDefault();
+    this.setState({ areaId: e.target.id})
+  }
+
   render() {
     return (
       <section className='area-card'>
@@ -19,7 +24,7 @@ export default class Areas extends Component {
         <p>{this.props.location}</p>
         <p>{this.props.about}</p>
         <Link to='/listings'>
-        <button id={this.props.id}>View Listings</button>
+        <button id={this.props.id} onClick={e => this.selectAreaListing(e)}>View Listings</button>
         </Link>
       </section>
     )
