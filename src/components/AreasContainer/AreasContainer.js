@@ -9,10 +9,13 @@ const AreasContainer = (props) => {
   const allAreas = props.listingsByArea.map(area => {
     return <Areas
       key={area[0].areaDetails.id}
+      id={area[0].areaDetails.id}
       areaNickname={area[0].areaNickname}
       name={area[0].areaDetails.name}
       location={area[0].areaDetails.location}
       about={area[0].areaDetails.about}
+      selectedAreaId={props.selectedAreaId}
+      updateSelectedArea={props.updateSelectedArea}
     />
   })
 
