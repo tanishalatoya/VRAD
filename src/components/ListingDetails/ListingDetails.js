@@ -46,7 +46,7 @@ class ListingDetail extends Component {
     .then(currentListing => this.setState({ currentListing }));
   }
 
-  render()    
+  render() {    
   }
 
 }
