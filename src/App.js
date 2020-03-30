@@ -24,7 +24,9 @@ export default class App extends Component {
   }
 
   updateSelectedArea = id => {
-    this.setState({ selectedAreaId: id })
+    this.setState({ selectedAreaId: id }, () => {
+      console.log(this.state);
+    })
   }
 
   componentDidMount() {
@@ -72,11 +74,14 @@ export default class App extends Component {
       <main>
        <Switch>
 
-        <Route path='/listings' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}/>}/>
-        <Route path="/areas" render={ () => <AreasContainer
+        <Route path='/areas/:id' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}
+        selectedAreaId={this.state.selectedAreaId}
+        />}/>
+        <Route path="/areas" render={ ({ match }) => <AreasContainer
           listingsByArea={this.state.listingsByArea}
           updateSelectedArea={this.updateSelectedArea}
-          user={this.state.user} />}/>
+          user={this.state.user}
+          match={match} />}/>
         <Route path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>
       </main>
