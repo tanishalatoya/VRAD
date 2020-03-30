@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './Areas.css';
 
 const Areas = (props) => {
+  console.log(props)
   return (
     <section className='area-card'>
       <h3>&ldquo;{props.areaNickname}&rdquo;</h3>
