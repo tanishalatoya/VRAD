@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import UserProfile from '../../components/UserProfile/UserProfile.js';
 
-class ListingDetails extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    console.log('made-it')
-    return (
-      <section>
-        <h1>{this.props.currentListing.listingName}</h1>
-      </section>
-    )
-  }
+const ListingDetails = (props) => {
+  return (
+    <section className='listing-details-container'>
+      <UserProfile user={props.user}/>
+      <h1>{props.currentListing.listingName}</h1>
+    </section>
+  )
 }
+
 export default ListingDetails;
