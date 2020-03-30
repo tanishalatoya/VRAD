@@ -14,6 +14,7 @@ export default class Areas extends Component {
   selectAreaListing = e => {
     e.preventDefault();
     this.setState({ areaId: e.target.id})
+    this.props.updateSelectedArea(this.state.areaId)
   }
 
   render() {
