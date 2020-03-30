@@ -12,6 +12,7 @@ export default class App extends Component {
     super();
     this.state = {
       user: {},
+      selectedAreaId: null
     }
   }
 
@@ -20,6 +21,12 @@ export default class App extends Component {
       this.setState({ favorites: [] });
     }
     this.setState({ user });
+  }
+
+  updateSelectedArea = id => {
+    this.setState({ selectedAreaId: id }, () => {
+      console.log(this.state);
+    })
   }
 
   componentDidMount() {
@@ -67,10 +74,16 @@ export default class App extends Component {
       <main>
        <Switch>
 
-        <Route path='/listings' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}/>}/>
-        <Route path="/areas" render={ () => <AreasContainer
+        <Route path='/areas/:id' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}
+        selectedAreaId={this.state.selectedAreaId}
+        user={this.state.user}
+        />}/>
+        <Route path="/areas" render={ ({ match }) => <AreasContainer
           listingsByArea={this.state.listingsByArea}
-          user={this.state.user} />}/>
+          updateSelectedArea={this.updateSelectedArea}
+          selectedAreaId={this.state.selectedAreaId}
+          user={this.state.user}
+          match={match} />}/>
         <Route path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>
       </main>
