@@ -1,10 +1,9 @@
 import React from 'react';
 import './ListingCard.css';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 
 export const ListingCard = (props) => {
-  console.log('made-it')
   return (
     <section className='listings-card'>
       <h2>&ldquo;{props.listingName}&rdquo;</h2>
@@ -12,7 +11,9 @@ export const ListingCard = (props) => {
       <p>Zip Code: {props.listingAddress2}</p>
       <div>
       <button>Favorite</button>
-      <button id={props.listingId}>View Listing Details</button>
+      <Link to={`/details/${props.id}`}>
+      <button id={props.id}>View Listing Details</button>
+      </Link>
       </div>
     </section>
   )
