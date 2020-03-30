@@ -81,7 +81,8 @@ export default class App extends Component {
          console.log(match)
          return <ListingDetails
           currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.id)) }
-          match={match}/>}
+          match={match}
+          user={this.state.user}/>}
        }/>
         <Route path='/areas/:id' render={ () => <ListingsContainer listingsByArea={this.state.listingsByArea}
         selectedAreaId={this.state.selectedAreaId}
