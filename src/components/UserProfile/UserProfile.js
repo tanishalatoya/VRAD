@@ -4,6 +4,7 @@ import userIcon from '../../assets/user.svg'
 import './UserProfile.css';
 
 const UserProfile = (props) => {
+  console.log(props);
   return (
     <aside className='user-profile'>
       <img src={userIcon} alt='user icon' />
@@ -12,7 +13,7 @@ const UserProfile = (props) => {
       <p>Travel Purpose</p>
       <p>{props.user.reason}</p>
       <Link to='/favorites'>
-        <button># of Favorites</button>
+        <button>{props.favorites.length} Favorites</button>
       </Link>
       <Link to='/'>
         <button>Logout</button>
