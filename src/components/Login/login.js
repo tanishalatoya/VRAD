@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/Login/login.css';
+
 
 
 
@@ -32,9 +34,11 @@ export default class UserLogin extends Component {
 
   render() {
     return (
-      <form>
-      <h1>Welcome to V-RAD</h1>
-      <div>
+      <form className='user-landing-page'>
+      <div className='heading'>
+        <h1>Welcome to V-RAD</h1>
+      </div>
+      <div className='input-div'>
         <input
           type='text'
           placeholder='name'
