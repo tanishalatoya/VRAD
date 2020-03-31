@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './login.css';
+
 
 
 
@@ -24,17 +26,17 @@ export default class UserLogin extends Component {
       e.preventDefault();
       this.setState({error: 'Please Fill In All Inputs'})
     } else {
-
-      const { setUserInfo } = this.props;
       this.props.setUserInfo(this.state);
     }
   }
 
   render() {
     return (
-      <form>
-      <h1>Welcome to V-RAD</h1>
-      <div>
+      <form className='user-landing-page'>
+      <div className='heading'>
+        <h1>Welcome to V-RAD</h1>
+      </div>
+      <div className='input-div'>
         <input
           type='text'
           placeholder='name'

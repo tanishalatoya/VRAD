@@ -10,8 +10,11 @@ const Areas = (props) => {
       <h4>{props.name}</h4>
       <p>{props.location}</p>
       <p>{props.about}</p>
-      <Link to='/listings'>
-      <button>View Listings</button>
+      <Link to={`areas/${props.id}/listings`}>
+        <button
+          id={props.id}
+          type='button'>View Listings
+        </button>
       </Link>
     </section>
   )

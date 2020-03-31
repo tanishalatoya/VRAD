@@ -1,1 +1,11 @@
-
+/* STYLING FOR LISTING CARDS */
+.listings-card {
+  border-radius: 4px;
+  box-shadow: 4px 3px 3px 3px rgba(0, 0, 0, 0.08);
+  height: 40%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  text-align: center;
+  padding: 0 1%;
+  width: 40%;
+}

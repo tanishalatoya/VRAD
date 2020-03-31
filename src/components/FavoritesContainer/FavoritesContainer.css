@@ -1,0 +1,17 @@
+/* STYLING FOR FAVORITES CONTAINER */
+.favorites-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "user-profile favorite-cards-container";
+  min-height: 100vh;
+}
+
+.favorite-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: favorite-cards-container;
+  justify-content: space-around;
+  padding-top: 5%;
+}
