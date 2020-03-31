@@ -71,7 +71,8 @@ export default class App extends Component {
            return <ListingDetails
             currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.listing_id)) }
             match={match}
-            user={this.state.user}/>}
+            user={this.state.user}
+            favorites={this.state.favorites}/>}
          }/>
           <Route path='/areas/:id' render={ ({ match }) => <ListingsContainer
             listingsByArea={ this.state.searchArray.filter(areaListing =>
