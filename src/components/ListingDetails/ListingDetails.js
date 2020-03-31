@@ -2,7 +2,7 @@ import React from 'react';
 import UserProfile from '../../components/UserProfile/UserProfile.js';
 import './ListingDetails.css';
 
-const ListingDetails = (props) => {
+export const ListingDetails = (props) => {
   let propKey = 0;
   const featureList =     props.currentListing.listingDetails.features.map(feat => {
     return (
@@ -27,5 +27,3 @@ const ListingDetails = (props) => {
     </section>
   )
 }
-
-export default ListingDetails;

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component }from 'react';
 import './App.css';
 import UserLogin from '../src/components/Login/login.js';
-import AreasContainer from '../src/components/AreasContainer/AreasContainer.js';
-import ListingDetails from './components/ListingDetails/ListingDetails.js';
+import { AreasContainer }from '../src/components/AreasContainer/AreasContainer.js';
+import { ListingDetails } from './components/ListingDetails/ListingDetails.js';
 import { ListingsContainer } from '../src/components/ListingsContainer/ListingsContainer';
 import { Switch, Route } from 'react-router-dom';
-import { Component } from 'react';
+
 
 
 export default class App extends Component {
@@ -72,25 +72,25 @@ export default class App extends Component {
     return (
       <main>
        <Switch>
-       <Route path='/details/:id' render={({ match }) => {
-         return <ListingDetails
-          currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.id)) }
-          match={match}
-          user={this.state.user}/>}
-       }/>
-        <Route path='/areas/:id' render={ ({ match }) => <ListingsContainer
-          listingsByArea={ this.state.searchArray.filter(areaListing =>
-          areaListing.areaDetails.id === parseInt(match.params.id)) }
-          match={match}
-          user={this.state.user}
-        />}/>
-        <Route path="/areas" render={ () => <AreasContainer
-          listingsByArea={this.state.listingsByArea}
-          updateSelectedArea={this.updateSelectedArea}
-          selectedAreaId={this.state.selectedAreaId}
-          user={this.state.user}
-        />}/>
-        <Route exact path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
+         <Route path='/details/:id' render={({ match }) => {
+           return <ListingDetails
+            currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.id)) }
+            match={match}
+            user={this.state.user}/>}
+         }/>
+          <Route path='/areas/:id' render={ ({ match }) => <ListingsContainer
+            listingsByArea={ this.state.searchArray.filter(areaListing =>
+            areaListing.areaDetails.id === parseInt(match.params.id)) }
+            match={match}
+            user={this.state.user}
+          />}/>
+          <Route path="/areas" render={ () => <AreasContainer
+            listingsByArea={this.state.listingsByArea}
+            updateSelectedArea={this.updateSelectedArea}
+            selectedAreaId={this.state.selectedAreaId}
+            user={this.state.user}
+          />}/>
+          <Route exact path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>
       </main>
     )

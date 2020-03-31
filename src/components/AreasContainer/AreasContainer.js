@@ -4,7 +4,7 @@ import UserProfile from '../../components/UserProfile/UserProfile.js';
 import PropTypes from 'prop-types';
 import './AreasContainer.css';
 
-const AreasContainer = (props) => {
+export const AreasContainer = (props) => {
   const allAreas = props.listingsByArea.map(area => {
     return <Areas
       key={area[0].areaDetails.id}
@@ -27,8 +27,6 @@ const AreasContainer = (props) => {
     </section>
   )
 }
-
-export default AreasContainer;
 
 AreasContainer.propTypes = {
   key: PropTypes.number,
