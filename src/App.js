@@ -12,15 +12,13 @@ export default class App extends Component {
     super();
     this.state = {
       user: {},
-      searchArray: []
+      searchArray: [],
+      favorites: []
 
     }
   }
 
   setUserInfo = user => {
-    if (!user.name) {
-      this.setState({ favorites: [] });
-    }
     this.setState({ user });
   }
 
@@ -57,7 +55,7 @@ export default class App extends Component {
         ...this.state.listingsByArea[0],
         ...this.state.listingsByArea[1],
         ...this.state.listingsByArea[2],
-        ...this.state.listingsByArea[3]]}))
+        ...this.state.listingsByArea[3]]}, () => console.log(this.state)))
       .catch(error => console.log(error))
   }
 
@@ -67,6 +65,7 @@ export default class App extends Component {
        <Switch>
         <Route path='/favorites' render={ () => <FavoritesContainer
           user={this.state.user}
+          favorites={this.state.favorites}
           />} />
          <Route path='/areas/:areas_id/listing/:listing_id' render={({ match }) => {
            return <ListingDetails
@@ -79,10 +78,12 @@ export default class App extends Component {
             areaListing.areaDetails.id === parseInt(match.params.id)) }
             match={match}
             user={this.state.user}
+            favorites={this.state.favorites}
           />}/>
           <Route path="/areas" render={ () => <AreasContainer
             listingsByArea={this.state.listingsByArea}
             user={this.state.user}
+            favorites={this.state.favorites}
           />}/>
           <Route exact path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>
