@@ -11,6 +11,9 @@ const UserProfile = (props) => {
       <p>{props.user.email}</p>
       <p>Travel Purpose</p>
       <p>{props.user.reason}</p>
+      <Link to='/favorites'>
+        <button># of Favorites</button>
+      </Link>
       <Link to='/'>
         <button>Logout</button>
       </Link>

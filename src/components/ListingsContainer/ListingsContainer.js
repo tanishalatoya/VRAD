@@ -5,34 +5,26 @@ import PropTypes from 'prop-types';
 import './ListingsContainer.css';
 
 export const ListingsContainer = (props) => {
-  const combinedListings = [
-    ...props.listingsByArea[0],
-    ...props.listingsByArea[1],
-    ...props.listingsByArea[2],
-    ...props.listingsByArea[3],
-  ]
-
-  const selectedAreaListings = combinedListings.filter(listing => {
-    return listing.areaDetails.id === parseInt(props.selectedAreaId)
-  })
-
-  const allListings = selectedAreaListings.map(listing => {
+  const allListings = props.listingsByArea.map(listing => {
     return <ListingCard
       listingName= {listing.listingName}
       listingAddress1= {listing.listingAddress1}
       listingAddress2= {listing.listingAddress2}
+      id= {listing.listingId}
+      areaId={listing.areaDetails.id}
       key= {listing.listingId}
     />
   })
 
   return (
-    <section>
+    <section className='listings-container'>
       <UserProfile user={props.user}/>
-      { allListings }
+      <section className='listing-cards-container'>
+        { allListings }
+      </section>
     </section>
   )
 }
-
 
 ListingsContainer.propTypes = {
   key: PropTypes.number,

@@ -1,0 +1,13 @@
+/* STYLING FOR LISTING DETAILS */
+.listing-details-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: auto;
+  grid-template-areas:
+  "user-profile listing-details";
+  min-height: 100vh;
+}
+
+.listing-details {
+  grid-area: listing-details;
+}

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-
-
+import './login.css';
 
 export default class UserLogin extends Component {
   constructor() {
@@ -24,23 +22,33 @@ export default class UserLogin extends Component {
       e.preventDefault();
       this.setState({error: 'Please Fill In All Inputs'})
     } else {
-
-      const { setUserInfo } = this.props;
-      this.props.setUserInfo(this.state);
+      this.props.setUserInfo({
+        name: this.state.name,
+        email: this.state.email,
+        reason: this.state.reason
+      });
+      this.setState({
+        name: '',
+        email: '',
+        reason: '',
+        error: ''
+      })
     }
   }
 
   render() {
     return (
-      <form>
-      <h1>Welcome to V-RAD</h1>
-      <div>
+      <form className='user-landing-page'>
+      <div className='heading'>
+        <h1>Welcome to V-RAD</h1>
+      </div>
+      <div className='input-div'>
         <input
           type='text'
           placeholder='name'
           value={this.state.name}
           name='name'
-          onChange={this.handleChange}
+          onChange={e => this.handleChange(e)}
         />
         <input
           type='text'
@@ -53,7 +61,7 @@ export default class UserLogin extends Component {
       <div>
         <label htmlFor="reason-for-login">Reason for visit</label>
       </div>
-        <select onChange={e => this.handleChange(e)} name='reason'>
+        <select onChange={e => this.handleChange(e)} id='reason-for-login' name='reason' value={this.state.reason}>
           <option disabled selected value>
           -- select an option --
           </option>
@@ -62,9 +70,9 @@ export default class UserLogin extends Component {
           <option value="other">Other</option>
         </select>
         <div>
-          <Link to="/areas">
-            <button type='button' onClick={e => this.loginUser(e)} className="login-button">Login</button>
-          </Link>
+        <Link to='/areas'>
+            <button type='submit' className="login-button" onSubmit={e => this.loginUser(e)}>Login</button>
+        </Link>
         </div>
       {this.state.error &&
         <div>
