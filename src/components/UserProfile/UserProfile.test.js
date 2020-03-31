@@ -6,8 +6,7 @@ import '@testing-library/jest-dom';
 
 describe('UserProfile', () => {
   it('should render a user\'s profile to the page', ()=> {
-
-    const { getByText } = render(<BrowserRouter>
+    const { queryByText, findByText } = render(<BrowserRouter>
         <UserProfile
           user={
             {

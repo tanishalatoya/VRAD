@@ -18,9 +18,6 @@ export default class App extends Component {
   }
 
   setUserInfo = user => {
-    if (!user.name) {
-      this.setState({ favorites: [] });
-    }
     this.setState({ user });
   }
 
