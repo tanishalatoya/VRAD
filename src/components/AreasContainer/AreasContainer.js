@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './AreasContainer.css';
 
 const AreasContainer = (props) => {
-  console.log(props)
   const allAreas = props.listingsByArea.map(area => {
     return <Areas
       key={area[0].areaDetails.id}
