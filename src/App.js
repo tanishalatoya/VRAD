@@ -64,9 +64,9 @@ export default class App extends Component {
     return (
       <main>
        <Switch>
-         <Route path='/details/:id' render={({ match }) => {
+         <Route path='/areas/:areas_id/listing/:listing_id' render={({ match }) => {
            return <ListingDetails
-            currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.id)) }
+            currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.listing_id)) }
             match={match}
             user={this.state.user}/>}
          }/>
