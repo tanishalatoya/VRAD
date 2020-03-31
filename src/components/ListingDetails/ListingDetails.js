@@ -2,11 +2,14 @@ import React from 'react';
 import UserProfile from '../../components/UserProfile/UserProfile.js';
 import './ListingDetails.css';
 
-const ListingDetails = (props) => {
-    const featureList = props.currentListing.listingDetails.features.map(feat => {
-      return <li>{feat}</li>
-    })
-    console.log(featureList)
+export const ListingDetails = (props) => {
+  let propKey = 0;
+  const featureList =     props.currentListing.listingDetails.features.map(feat => {
+    return (
+      <li key={propKey += 1}>{feat}</li>
+    )
+  })
+
   return (
     <section className='listing-details-container'>
       <UserProfile user={props.user} />
@@ -24,5 +27,3 @@ const ListingDetails = (props) => {
     </section>
   )
 }
-
-export default ListingDetails;

@@ -24,8 +24,6 @@ export default class UserLogin extends Component {
       e.preventDefault();
       this.setState({error: 'Please Fill In All Inputs'})
     } else {
-
-      const { setUserInfo } = this.props;
       this.props.setUserInfo(this.state);
     }
   }

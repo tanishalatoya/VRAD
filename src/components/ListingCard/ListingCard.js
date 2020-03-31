@@ -11,7 +11,7 @@ export const ListingCard = (props) => {
       <p>Zip Code: {props.listingAddress2}</p>
       <div>
       <button>Favorite</button>
-      <Link to={`/details/${props.id}`}>
+      <Link to={`/areas/${props.areaId}/listing/${props.id}/details`}>
       <button id={props.id}>View Listing Details</button>
       </Link>
       </div>
