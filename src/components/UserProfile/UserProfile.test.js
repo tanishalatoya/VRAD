@@ -9,8 +9,8 @@ describe('UserProfile', () => {
 
     const user = {
       name: 'Willy',
-      email: 'hello@world.com'
-      reason: 'Vacation'
+      email: 'hello@world.com',
+      reason: 'vacation'
     }
     const { queryByText, findByText } = render(<BrowserRouter>
         <UserProfile

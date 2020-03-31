@@ -12,7 +12,7 @@ export const ListingCard = (props) => {
       <div>
       <button>Favorite</button>
       <Link to={`/areas/${props.areaId}/listing/${props.id}/details`}>
-      <button id={props.id}>View Listing Details</button>
+      <button id={props.id}>View Details</button>
       </Link>
       </div>
     </section>
