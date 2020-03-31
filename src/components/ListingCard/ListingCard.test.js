@@ -11,6 +11,7 @@ describe('Listings', () => {
         ListingName={'Hip RiNo Party Spot'}
         listingAddress1={'2250 Lawrence St'}
         listingAddress2={'80205'}
+        viewDetails={jest.fn()}
       /></BrowserRouter>)
 
     const name = getByText('Hip RiNo Party Spot');
