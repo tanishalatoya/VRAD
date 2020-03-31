@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '/Users/trondmakonese/mod_3/V-RAD/v-rad-project/src/components/Login/login.css';
+import './login.css';
 
 
 
