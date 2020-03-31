@@ -5,22 +5,22 @@ import { render, debug, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 describe('UserProfile', () => {
-  it('should render a user\'s profile to the page', async ()=> {
-
-    const user = {
-      name: 'Willy',
-      email: 'hello@world.com',
-      reason: 'vacation'
-    }
+  it('should render a user\'s profile to the page', ()=> {
     const { queryByText, findByText } = render(<BrowserRouter>
         <UserProfile
-          name={'Willy Wonka'}
-          email={'willyw@wonkafactory.com'}
-          reason={'Vacation'}
-        />
+          user={
+            {
+            name: 'Willy',
+            email: 'willy@wonkaville.com',
+            reason: 'Business'
+            }
+          }
+          />
       </BrowserRouter>)
 
-      const userName = await waitFor(() => getByText('Vacation'))
-      expect(userName).toBeInTheDocument();
+    expect(getByText('Willy')).toBeInTheDocument();
+    expect(getByText('willy@wonkaville.com')).toBeInTheDocument();
+    expect(getByText('Business')).toBeInTheDocument();
+
   });
 });
