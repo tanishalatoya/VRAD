@@ -14,7 +14,7 @@ VRAD is an application built with `create-react-app` that allows a user to book 
 
 
 ## Demo
-
+![image](https://media.giphy.com/media/d555ZiVfetDS2OPh9Q/giphy.gif)
 
 
 ## To Install
