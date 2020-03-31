@@ -4,6 +4,7 @@ import UserLogin from '../src/components/Login/login.js';
 import { AreasContainer }from '../src/components/AreasContainer/AreasContainer.js';
 import { ListingDetails } from './components/ListingDetails/ListingDetails.js';
 import { ListingsContainer } from '../src/components/ListingsContainer/ListingsContainer';
+import { FavoritesContainer } from './components/FavoritesContainer/FavoritesContainer';
 import { Switch, Route } from 'react-router-dom';
 
 export default class App extends Component {
@@ -64,6 +65,9 @@ export default class App extends Component {
     return (
       <main>
        <Switch>
+        <Route path='/favorites' render={ () => <FavoritesContainer
+          user={this.state.user}
+          />} />
          <Route path='/areas/:areas_id/listing/:listing_id' render={({ match }) => {
            return <ListingDetails
             currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.listing_id)) }
