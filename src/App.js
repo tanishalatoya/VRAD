@@ -6,14 +6,11 @@ import { ListingDetails } from './components/ListingDetails/ListingDetails.js';
 import { ListingsContainer } from '../src/components/ListingsContainer/ListingsContainer';
 import { Switch, Route } from 'react-router-dom';
 
-
-
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       user: {},
-      selectedAreaId: null,
       searchArray: []
 
     }
@@ -24,11 +21,6 @@ export default class App extends Component {
       this.setState({ favorites: [] });
     }
     this.setState({ user });
-  }
-
-  updateSelectedArea = id => {
-    this.setState({ selectedAreaId: id }, () => {
-    })
   }
 
   componentDidMount() {
@@ -86,8 +78,6 @@ export default class App extends Component {
           />}/>
           <Route path="/areas" render={ () => <AreasContainer
             listingsByArea={this.state.listingsByArea}
-            updateSelectedArea={this.updateSelectedArea}
-            selectedAreaId={this.state.selectedAreaId}
             user={this.state.user}
           />}/>
           <Route exact path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>

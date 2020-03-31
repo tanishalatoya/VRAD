@@ -13,8 +13,6 @@ export const AreasContainer = (props) => {
       name={area[0].areaDetails.name}
       location={area[0].areaDetails.location}
       about={area[0].areaDetails.about}
-      selectedAreaId={props.selectedAreaId}
-      updateSelectedArea={props.updateSelectedArea}
     />
   })
 
