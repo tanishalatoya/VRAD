@@ -18,7 +18,9 @@ export const ListingsContainer = (props) => {
 
   return (
     <section className='listings-container'>
-      <UserProfile user={props.user}/>
+      <UserProfile
+        user={props.user}
+        favorites={props.favorites}/>
       <section className='listing-cards-container'>
         { allListings }
       </section>
