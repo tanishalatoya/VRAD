@@ -1,8 +1,8 @@
-# What's New?
+# VRAD
 Contributor: [Trond Makonese](https://github.com/Trond240) & [Tanisha L Davey](https://github.com/tanishalatoya)
 
 
-## VRAD
+## Abstract
 **Technologies used:** _React, React Testing Library, Jest-DOM Library, Webpack_
 
 VRAD is an application built with `create-react-app` that allows a user to book rentals around the Denver, CO area. The fetch API runs upon user login, gathering data related to listings within 4 Denver areas. Some of the focus points for this project included:
