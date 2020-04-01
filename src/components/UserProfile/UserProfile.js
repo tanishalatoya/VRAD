@@ -4,7 +4,6 @@ import userIcon from '../../assets/user.svg'
 import './UserProfile.css';
 
 const UserProfile = (props) => {
-  console.log(props);
   return (
     <aside className='user-profile'>
       <img src={userIcon} alt='user icon' />
