@@ -9,7 +9,9 @@ export const FavoritesContainer = (props) => {
 
   return (
     <section className='favorites-container'>
-      <UserProfile user={props.user}/>
+      <UserProfile
+        user={props.user}
+        favorites={props.favorites}/>
       <section className='favorite-cards-container'>
         <p>Favorites here.</p>
       </section>
