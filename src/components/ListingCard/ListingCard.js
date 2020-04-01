@@ -31,7 +31,7 @@ export class ListingCard extends Component {
         <div>
         <button id={this.props.id} onClick={e => this.updateFavoriteStatus(e)}>Favorite</button>
         <Link to={`/areas/${this.props.areaId}/listing/${this.props.id}/details`}>
-        <button>View Listing Details</button>
+        <button>View Listing</button>
         </Link>
         </div>
       </section>
