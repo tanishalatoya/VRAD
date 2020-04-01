@@ -14,12 +14,19 @@ export default class App extends Component {
       user: {},
       searchArray: [],
       favorites: []
-
     }
   }
 
   setUserInfo = user => {
     this.setState({ user });
+  }
+
+  setFavorites = favorites => {
+    this.setState({ favorites: [...this.state.favorites, ...favorites] }, () => console.log(this.state.favorites))
+  }
+
+  setUpdatedFavorites = updatedFavorites => {
+    this.setState({ favorites: updatedFavorites }, () => console.log(this.state.favorites))
   }
 
   componentDidMount() {
@@ -80,6 +87,8 @@ export default class App extends Component {
             match={match}
             user={this.state.user}
             favorites={this.state.favorites}
+            setFavorites={this.setFavorites}
+            setUpdatedFavorites={this.setUpdatedFavorites}
           />}/>
           <Route path="/areas" render={ () => <AreasContainer
             listingsByArea={this.state.listingsByArea}

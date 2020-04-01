@@ -7,18 +7,21 @@ export class ListingCard extends Component {
   constructor() {
     super();
     this.state = {
-      selectedFavorites: []
+
     }
     this.favoritesHolding = []
   }
 
-  updateFavoriteStatus(e) {
-    if (!this.favoritesHolding.includes(e.target.id)) {
+  updateFavoriteStatus = (e) => {
+    if (!this.props.favorites.includes(e.target.id)) {
       this.favoritesHolding.push((e.target.id))
-      this.setState({ selectedFavorites: this.favoritesHolding}, () => console.log('in state', this.state.selectedFavorites))
+      this.props.setFavorites(this.favoritesHolding)
+      this.favoritesHolding = []
     } else {
-      this.favoritesHolding.splice(this.favoritesHolding.indexOf(e.target.id), 1)
-      this.setState({ selectedFavorites: this.favoritesHolding}, () => console.log('in strate', this.state.selectedFavorites))
+      let favoritesCopy = [...this.props.favorites]
+      let index = this.props.favorites.indexOf(e.target.id)
+      let updatedFavorites = favoritesCopy.splice(index, 1)
+      this.props.setUpdatedFavorites(favoritesCopy)
     }
   }
 
