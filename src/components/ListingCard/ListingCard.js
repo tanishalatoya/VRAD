@@ -14,14 +14,11 @@ export class ListingCard extends Component {
 
   updateFavoriteStatus = (e) => {
     if (!this.props.favorites.includes(e.target.id)) {
-      this.favoritesHolding.push((e.target.id))
+      this.favoritesHolding.push(e.target.id)
       this.props.setFavorites(this.favoritesHolding)
       this.favoritesHolding = []
     } else {
-      let favoritesCopy = [...this.props.favorites]
-      let index = this.props.favorites.indexOf(e.target.id)
-      let updatedFavorites = favoritesCopy.splice(index, 1)
-      this.props.setUpdatedFavorites(favoritesCopy)
+      this.props.setUpdatedFavorites(e.target.id)
     }
   }
 
