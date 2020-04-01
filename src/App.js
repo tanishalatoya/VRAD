@@ -21,12 +21,15 @@ export default class App extends Component {
     this.setState({ user });
   }
 
-  setFavorites = favorites => {
-    this.setState({ favorites: [...this.state.favorites, ...favorites] }, () => console.log(this.state.favorites))
+  setFavorites = favorite => {
+    this.setState({ favorites: [...this.state.favorites, ...favorite] }, () => console.log('adding:::', this.state.favorites))
   }
 
-  setUpdatedFavorites = updatedFavorites => {
-    this.setState({ favorites: updatedFavorites }, () => console.log(this.state.favorites))
+  setUpdatedFavorites = id => {
+    const newFavorites = this.state.favorites.filter(favorite => {
+      return favorite !== id
+    })
+    this.setState({ favorites: newFavorites }, () => console.log(this.state.favorites))
   }
 
   componentDidMount() {
