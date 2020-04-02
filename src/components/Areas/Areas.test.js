@@ -23,6 +23,5 @@ describe('Areas', () => {
     expect(location).toBeInTheDocument();
     expect(name).toBeInTheDocument();
     expect(about).toBeInTheDocument();
-
   });
 });

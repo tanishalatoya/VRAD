@@ -4,7 +4,7 @@ import './ListingDetails.css';
 
 export const ListingDetails = (props) => {
   let propKey = 0;
-  const featureList =     props.currentListing.listingDetails.features.map(feat => {
+  const featureList = props.currentListing.listingDetails.features.map(feat => {
     return (
       <li key={propKey += 1}>{feat}</li>
     )
