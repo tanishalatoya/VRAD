@@ -12,7 +12,7 @@ const UserProfile = (props) => {
       <p>Travel Purpose</p>
       <p>{props.user.reason}</p>
       <Link to='/favorites'>
-        <button># of Favorites</button>
+        <button>{props.favorites.length} Favorites</button>
       </Link>
       <Link to='/'>
         <button>Logout</button>

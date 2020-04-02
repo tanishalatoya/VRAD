@@ -12,13 +12,24 @@ export default class App extends Component {
     super();
     this.state = {
       user: {},
-      searchArray: []
-
+      searchArray: [],
+      favorites: []
     }
   }
 
   setUserInfo = user => {
     this.setState({ user });
+  }
+
+  setFavorites = favorite => {
+    this.setState({ favorites: [...this.state.favorites, ...favorite] }, () => console.log('adding:::', this.state.favorites))
+  }
+
+  setUpdatedFavorites = id => {
+    const newFavorites = this.state.favorites.filter(favorite => {
+      return favorite !== id
+    })
+    this.setState({ favorites: newFavorites }, () => console.log(this.state.favorites))
   }
 
   componentDidMount() {
@@ -54,7 +65,7 @@ export default class App extends Component {
         ...this.state.listingsByArea[0],
         ...this.state.listingsByArea[1],
         ...this.state.listingsByArea[2],
-        ...this.state.listingsByArea[3]]}))
+        ...this.state.listingsByArea[3]]}, () => console.log(this.state)))
       .catch(error => console.log(error))
   }
 
@@ -64,22 +75,28 @@ export default class App extends Component {
        <Switch>
         <Route path='/favorites' render={ () => <FavoritesContainer
           user={this.state.user}
+          favorites={this.state.favorites}
           />} />
          <Route path='/areas/:areas_id/listing/:listing_id' render={({ match }) => {
            return <ListingDetails
             currentListing={ this.state.searchArray.find(detail => detail.listingId === parseInt(match.params.listing_id)) }
             match={match}
-            user={this.state.user}/>}
+            user={this.state.user}
+            favorites={this.state.favorites}/>}
          }/>
           <Route path='/areas/:id' render={ ({ match }) => <ListingsContainer
             listingsByArea={ this.state.searchArray.filter(areaListing =>
             areaListing.areaDetails.id === parseInt(match.params.id)) }
             match={match}
             user={this.state.user}
+            favorites={this.state.favorites}
+            setFavorites={this.setFavorites}
+            setUpdatedFavorites={this.setUpdatedFavorites}
           />}/>
           <Route path="/areas" render={ () => <AreasContainer
             listingsByArea={this.state.listingsByArea}
             user={this.state.user}
+            favorites={this.state.favorites}
           />}/>
           <Route exact path='/' render={ () => <UserLogin setUserInfo={this.setUserInfo} />}/>
        </Switch>

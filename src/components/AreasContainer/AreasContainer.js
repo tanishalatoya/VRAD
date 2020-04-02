@@ -18,7 +18,9 @@ export const AreasContainer = (props) => {
 
   return (
     <section className='areas-container'>
-      <UserProfile user={props.user}/>
+      <UserProfile
+        user={props.user}
+        favorites={props.favorites}/>
       <section className='card-container'>
       { allAreas }
       </section>

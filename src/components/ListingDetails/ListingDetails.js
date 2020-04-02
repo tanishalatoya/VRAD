@@ -12,7 +12,9 @@ export const ListingDetails = (props) => {
 
   return (
     <section className='listing-details-container'>
-      <UserProfile user={props.user} />
+      <UserProfile
+        user={props.user}
+        favorites={props.favorites} />
       <section className='listing-details'>
         <h1>{props.currentListing.listingName}</h1>
         <p>Number of Beds: {props.currentListing.listingDetails.beds}</p>

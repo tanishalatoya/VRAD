@@ -13,12 +13,17 @@ export const ListingsContainer = (props) => {
       id= {listing.listingId}
       areaId={listing.areaDetails.id}
       key= {listing.listingId}
+      favorites={props.favorites}
+      setFavorites={props.setFavorites}
+      setUpdatedFavorites={props.setUpdatedFavorites}
     />
   })
 
   return (
     <section className='listings-container'>
-      <UserProfile user={props.user}/>
+      <UserProfile
+        user={props.user}
+        favorites={props.favorites}/>
       <section className='listing-cards-container'>
         { allListings }
       </section>
