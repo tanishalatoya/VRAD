@@ -24,7 +24,7 @@ VRAD is an application built with `create-react-app` that allows a user to book 
 1. `npm install`
 1. `npm start` to use the server (navigate to http://localhost:3000)
 
-### API Endpoints
+#### API Endpoints
 | url | verb | options | sample response |
 | ----|------|---------|---------------- |
 | `http://localhost:3001/api/v1/areas` | GET | not needed | Array of all areas available to rent |
